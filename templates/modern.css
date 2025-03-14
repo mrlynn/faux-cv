@@ -1,0 +1,94 @@
+/* Modern resume style for faux-cv 
+ * Save this in templates/modern.css and use with --template flag 
+ */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #333;
+}
+
+header {
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: var(--primary-color, #0066cc);
+  font-size: 28px;
+  letter-spacing: -0.5px;
+  margin-bottom: 5px;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.contact-info a {
+  color: var(--primary-color, #0066cc);
+  text-decoration: none;
+}
+
+h2 {
+  color: var(--primary-color, #0066cc);
+  font-size: 22px;
+  letter-spacing: -0.5px;
+  margin-top: 25px;
+  border-left: 4px solid var(--primary-color, #0066cc);
+  padding-left: 10px;
+}
+
+h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+
+.job-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.job-title {
+  font-weight: bold;
+}
+
+.job-date {
+  color: #666;
+  font-style: italic;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.skill-item {
+  background-color: #f0f0f0;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
+.skill-item.highlight {
+  background-color: var(--primary-color, #0066cc);
+  color: white;
+}

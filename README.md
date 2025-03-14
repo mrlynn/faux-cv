@@ -1,16 +1,28 @@
-## PDF Generation
+# Faux-CV
 
-To use the PDF generation feature, you'll need to install the optional dependencies:
+[![npm version](https://img.shields.io/npm/v/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/npm/dm/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
+[![Build Status](https://img.shields.io/github/workflow/status/username/faux-cv/Test)](https://github.com/username/faux-cv/actions)
+[![Coverage Status](https://img.shields.io/codecov/c/github/username/faux-cv)](https://codecov.io/gh/username/faux-cv)
 
-```bash
-npm install puppeteer showdown
-```
+> Generate realistic fake resumes for testing and development. Customizable by industry, experience level, and output format.
 
-These are listed as optional dependencies in the package.json to keep the main package lightweight for users who don't need PDF functionality.# faux-cv
+![logo](img/logo.png)
 
-Generate realistic fake resumes in markdown and JSON formats with customizable options for different industries, experience levels, and more.
+## 🚀 Features
 
-## Installation
+- ✨ **Realistic content** - Professionally written work experience, skills, education, and certifications
+- 🏢 **Multiple industries** - Specialized profiles for tech, finance, healthcare, marketing, and education sectors
+- 📊 **Experience levels** - Generate junior, mid-level, or senior professional profiles
+- 📄 **Multiple formats** - Output in Markdown, JSON, PDF, or all formats
+- 🎨 **Customizable templates** - Use built-in styles or create your own with Mustache templating
+- 👥 **Batch generation** - Create multiple resumes with a single command
+- 🔄 **Reproducible output** - Set random seeds for consistent results
+
+## 📦 Installation
+
+Install globally:
 
 ```bash
 npm install -g faux-cv
@@ -22,17 +34,15 @@ Or use directly with npx:
 npx faux-cv
 ```
 
-## Features
+### PDF Support
 
-- Generate realistic fake resumes with detailed work experience, education, skills, and certifications
-- Customize for different industries (tech, finance, healthcare, marketing, education)
-- Adjust experience levels to generate junior, mid-level, or senior profiles
-- Output in markdown, JSON, PDF, or multiple formats
-- Use custom templates with Mustache templating language
-- Configurable options for gender, contact details, output filenames and more
-- Generate multiple resumes at once with a single command
+To use the PDF generation feature, install the optional dependencies:
 
-## Usage
+```bash
+npm install puppeteer showdown
+```
+
+## 🛠️ Usage
 
 ### Command Line
 
@@ -60,11 +70,11 @@ npx faux-cv --industry tech --experience 7 --format both
 
 ### Available Industries
 
-- `tech`: Software Engineering, IT, Data Science
-- `finance`: Banking, Investment, Accounting
-- `healthcare`: Medical, Health Services
-- `marketing`: Digital Marketing, Content, Branding
-- `education`: Teaching, Educational Administration
+- **Tech**: Software Engineering, IT, Data Science
+- **Finance**: Banking, Investment, Accounting
+- **Healthcare**: Medical, Health Services
+- **Marketing**: Digital Marketing, Content, Branding
+- **Education**: Teaching, Educational Administration
 
 ### Examples
 
@@ -98,9 +108,9 @@ Use a custom template:
 npx faux-cv -t ./my-template.mustache
 ```
 
-## Programmatic Usage
+## 📚 Programmatic Usage
 
-You can also use faux-cv as a library in your Node.js projects:
+You can use faux-cv as a library in your Node.js projects:
 
 ```javascript
 const { generateResume } = require('faux-cv');
@@ -113,7 +123,6 @@ const resume = generateResume({
   gender: 'female',
   includeLinkedin: true,
   includeWebsite: true,
-  format: 'both',
   pdfStyle: 'modern',
   pdfColor: '#2c3e50'
 });
@@ -122,9 +131,11 @@ console.log(resume.markdown); // Markdown formatted resume
 console.log(resume.json);     // Resume data as a JavaScript object
 ```
 
-## Creating Custom Templates
+## 🎨 Creating Custom Templates
 
-faux-cv uses Mustache templating. Create your own template files with the following variables:
+Faux-CV uses Mustache templating. Create your own template files with the following variables:
+
+### Basic Information
 
 - `{{name}}`: Full name
 - `{{contactInfo.email}}`: Email address
@@ -134,19 +145,25 @@ faux-cv uses Mustache templating. Create your own template files with the follow
 - `{{contactInfo.website}}`: Personal website URL
 - `{{summary}}`: Professional summary
 
-For work experience (loop through `{{#experience}}` array):
+### Experience Section
+
+Loop through `{{#experience}}` array:
 - `{{position}}`: Job title
 - `{{company}}`: Company name
 - `{{startDate}}`: Start date
 - `{{endDate}}`: End date
 - `{{#bulletPoints}}`: List of accomplishments
 
-For education (loop through `{{#education}}` array):
+### Education Section
+
+Loop through `{{#education}}` array:
 - `{{degree}}`: Degree type
 - `{{field}}`: Field of study
 - `{{institution}}`: School name
 - `{{graduationYear}}`: Year of graduation
 - `{{#details}}`: Additional education details
+
+### Skills & Certifications
 
 For skills (loop through `{{#skillCategories}}` array):
 - `{{category}}`: Skill category name
@@ -155,6 +172,121 @@ For skills (loop through `{{#skillCategories}}` array):
 For certifications (loop through `{{#certifications}}` array):
 - List of certification names
 
-## License
+## 📝 Example Output
 
-MIT# faux-cv
+### JSON Format
+
+```json
+{
+  "name": "Jordan Smith",
+  "contactInfo": {
+    "email": "jordan.smith@example.com",
+    "phone": "555-123-4567",
+    "location": "New York, NY",
+    "linkedin": "linkedin.com/in/jordan-smith-456789",
+    "website": "jordansmith.com"
+  },
+  "summary": "Experienced Software Engineer with 7 years of proven expertise in JavaScript, Python, and AWS...",
+  "experience": [
+    {
+      "position": "Senior Developer",
+      "company": "TechCorp",
+      "startDate": "January 2020",
+      "endDate": "Present",
+      "bulletPoints": [
+        "Led development of cloud infrastructure, resulting in 40% improvement in system performance",
+        "Managed team of 5 engineers implementing microservices architecture"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor's",
+      "field": "Computer Science",
+      "institution": "State University",
+      "graduationYear": 2016,
+      "details": ["GPA: 3.8", "Dean's List"]
+    }
+  ],
+  "skillCategories": [
+    {
+      "category": "Technical Skills",
+      "skills": "JavaScript, Python, AWS, Docker, Kubernetes, React, Node.js"
+    },
+    {
+      "category": "Soft Skills",
+      "skills": "Team Leadership, Communication, Problem Solving"
+    }
+  ],
+  "certifications": [
+    "AWS Certified Solutions Architect",
+    "Certified Kubernetes Administrator"
+  ]
+}
+```
+
+### Markdown Format
+
+```markdown
+# Jordan Smith
+
+jordan.smith@example.com | 555-123-4567 | New York, NY | [LinkedIn](linkedin.com/in/jordan-smith-456789) | [Website](jordansmith.com)
+
+## Summary
+Experienced Software Engineer with 7 years of proven expertise in JavaScript, Python, and AWS...
+
+## Experience
+### Senior Developer | TechCorp | January 2020 - Present
+- Led development of cloud infrastructure, resulting in 40% improvement in system performance
+- Managed team of 5 engineers implementing microservices architecture
+
+## Education
+### Bachelor's in Computer Science | State University | 2016
+- GPA: 3.8
+- Dean's List
+
+## Skills
+### Technical Skills
+JavaScript, Python, AWS, Docker, Kubernetes, React, Node.js
+
+### Soft Skills
+Team Leadership, Communication, Problem Solving
+
+## Certifications
+- AWS Certified Solutions Architect
+- Certified Kubernetes Administrator
+```
+
+## 🧪 Testing
+
+Run the test suite:
+
+```bash
+npm test
+```
+
+Run coverage report:
+
+```bash
+npm run test:coverage
+```
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/username/faux-cv/issues).
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is [MIT](https://opensource.org/licenses/MIT) licensed.
+
+## 🙏 Acknowledgements
+
+- [Faker.js](https://github.com/faker-js/faker) - For generating realistic data
+- [Mustache.js](https://github.com/janl/mustache.js) - For templating
+- [Puppeteer](https://github.com/puppeteer/puppeteer) & [Showdown](https://github.com/showdownjs/showdown) - For PDF generation
