@@ -3,8 +3,8 @@
 [![npm version](https://img.shields.io/npm/v/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/npm/dm/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
-[![Build Status](https://img.shields.io/github/workflow/status/username/faux-cv/Test)](https://github.com/username/faux-cv/actions)
-[![Coverage Status](https://img.shields.io/codecov/c/github/username/faux-cv)](https://codecov.io/gh/username/faux-cv)
+[![Build Status](https://img.shields.io/github/workflow/status/mrlynn/faux-cv/Test)](https://github.com/mrlynn/faux-cv/actions)
+[![Coverage Status](https://img.shields.io/codecov/c/github/mrlynn/faux-cv)](https://codecov.io/gh/mrlynn/faux-cv)
 
 > Generate realistic fake resumes for testing and development. Customizable by industry, experience level, and output format.
 
