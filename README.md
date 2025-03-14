@@ -8,7 +8,7 @@
 
 > Generate realistic fake resumes for testing and development. Customizable by industry, experience level, and output format.
 
-![logo](img/logo.png)
+![logo](https://raw.githubusercontent.com/mrlynn/faux-cv/main/img/logo.png)
 
 ## 🚀 Features
 
