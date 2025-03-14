@@ -35,7 +35,8 @@
     "@faker-js/faker": "^8.0.2",
     "chalk": "^4.1.2",
     "commander": "^11.0.0",
-    "mustache": "^4.2.0"
+    "mustache": "^4.2.0",
+    "Puppeteer": "npm:puppeteer@^22.15.0"
   },
   "optionalDependencies": {
     "puppeteer": "^22.0.0",
