@@ -1,6 +1,8 @@
 # Faux-CV
 
 [![npm version](https://img.shields.io/npm/v/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mrlynn/faux-cv/main.yml?label=CI)](https://github.com/mrlynn/faux-cv/actions?query=branch%3Amain)
+[![GitHub stars](https://img.shields.io/github/stars/mrlynn/faux-cv?style=social)](https://github.com/mrlynn/faux-cv)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/npm/dm/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
 [![Build Status](https://img.shields.io/github/workflow/status/mrlynn/faux-cv/Test)](https://github.com/mrlynn/faux-cv/actions)
