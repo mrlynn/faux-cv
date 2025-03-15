@@ -4,7 +4,7 @@
   "description": "Generate realistic fake resumes in markdown, JSON, and PDF formats",
   "main": "lib/index.js",
   "bin": {
-    "faux-cv": "./bin/cli.js"
+    "faux-cv": "bin/cli.js"
   },
   "scripts": {
     "test": "NODE_ENV=test jest",
