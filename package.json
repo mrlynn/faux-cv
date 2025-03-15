@@ -1,6 +1,6 @@
 {
   "name": "faux-cv",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Generate realistic fake resumes in markdown, JSON, and PDF formats",
   "main": "lib/index.js",
   "bin": {
