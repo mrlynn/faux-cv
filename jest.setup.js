@@ -23,14 +23,21 @@ global.beforeEach(() => {
 
 global.afterEach(() => {
   const testState = expect.getState();
-  const testName = expect.getState().currentTestName;
-  console.log('Test Status:', testState.numPassingTests > 0 ? 'PASSED' : 'FAILED');
-  if (!testState.numPassingTests) {
+  const testName = testState.currentTestName;
+  const testStatus = testState.numPassingTests > 0 ? 'PASSED' : 'FAILED';
+  console.log('Test Status:', testStatus);
+  
+  if (testStatus === 'FAILED') {
+    // Safely access test results with optional chaining
+    const failedTest = testState.testResults?.[0]?.testResults?.find(r => r.status === 'failed');
+    const failureMessages = failedTest?.failureMessages || ['No failure messages available'];
+    
     console.log('Failed test details:', {
       name: testName,
-      error: testState.testResults[0].testResults.find(r => r.status === 'failed')?.failureMessages
+      error: failureMessages
     });
   }
+  
   console.log('--- Test Completed ---\n');
 });
 
