@@ -1,12 +1,14 @@
-# Faux-CV
-
 [![npm version](https://img.shields.io/npm/v/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mrlynn/faux-cv/main.yml?label=CI)](https://github.com/mrlynn/faux-cv/actions?query=branch%3Amain)
-[![GitHub stars](https://img.shields.io/github/stars/mrlynn/faux-cv?style=social)](https://github.com/mrlynn/faux-cv)
+[![CI](https://github.com/mrlynn/faux-cv/actions/workflows/test.yml/badge.svg)](https://github.com/mrlynn/faux-cv/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/npm/dm/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
+[![Coverage](https://img.shields.io/codecov/c/github/mrlynn/faux-cv/main)](https://codecov.io/gh/mrlynn/faux-cv)
+
+# Faux-CV
+
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mrlynn/faux-cv/main.yml?label=CI)](https://github.com/mrlynn/faux-cv/actions?query=branch%3Amain)
+[![GitHub stars](https://img.shields.io/github/stars/mrlynn/faux-cv?style=social)](https://github.com/mrlynn/faux-cv)
 [![Build Status](https://img.shields.io/github/workflow/status/mrlynn/faux-cv/Test)](https://github.com/mrlynn/faux-cv/actions)
-[![Coverage Status](https://img.shields.io/codecov/c/github/mrlynn/faux-cv)](https://codecov.io/gh/mrlynn/faux-cv)
 
 > Generate realistic fake resumes for testing and development. Customizable by industry, experience level, and output format.
 
