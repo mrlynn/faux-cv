@@ -7,8 +7,23 @@ const originalConsole = {
 
 // Only mock console methods during test execution
 global.beforeEach(() => {
+  // Store the current test name
+  const testName = expect.getState().currentTestName;
+  
+  // Only log errors if they're not from expected test cases
+  console.error = (...args) => {
+    // Skip logging validation errors from expected test cases
+    if (testName && (
+      testName.includes('should handle errors') ||
+      testName.includes('should throw error') ||
+      testName.includes('should reject')
+    )) {
+      return;
+    }
+    originalConsole.error(...args);
+  };
+  
   console.log = (...args) => originalConsole.log(...args);
-  console.error = (...args) => originalConsole.error(...args);
   console.warn = (...args) => originalConsole.warn(...args);
 });
 

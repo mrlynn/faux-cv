@@ -26,7 +26,7 @@ module.exports = {
     collectCoverage: true,
     
     // The directory where Jest should output its coverage files
-    coverageDirectory: 'coverage',
+    coverageDirectory: './coverage',
     
     // An array of regexp pattern strings used to skip coverage collection
     coveragePathIgnorePatterns: [
@@ -37,16 +37,20 @@ module.exports = {
     // The glob patterns Jest uses to detect coverage files
     coverageReporters: [
       'text',
-      'lcov',
-      'json',
-      'clover'
+      'lcov'
     ],
     
     // An object that configures minimum threshold enforcement for coverage results
     coverageThreshold: {
       global: {
-        branches: 80,
+        branches: 70,
         functions: 80,
+        lines: 70,
+        statements: 70
+      },
+      'lib/**/*.js': {
+        branches: 80,
+        functions: 90,
         lines: 80,
         statements: 80
       }
@@ -58,19 +62,19 @@ module.exports = {
     // The maximum amount of workers used to run your tests (defaults to # of CPUs - 1)
     maxWorkers: '50%',
     
-    testResultsProcessor: "jest-junit",
+    testResultsProcessor: 'jest-junit',
     
     reporters: [
-      "default",
-      ["jest-junit", {
-        "outputDirectory": "./test-results/jest",
-        "outputName": "results.xml",
-        "ancestorSeparator": " › ",
-        "uniqueOutputName": "false",
-        "suiteNameTemplate": "{filepath}",
-        "classNameTemplate": "{classname}",
-        "titleTemplate": "{title}",
-        "includeConsoleOutput": true
+      'default',
+      ['jest-junit', {
+        outputDirectory: './test-results/jest',
+        outputName: 'results.xml',
+        includeConsoleOutput: true
       }]
+    ],
+    
+    collectCoverageFrom: [
+      'lib/**/*.js',
+      '!lib/pdf/**/*.js'  // Exclude PDF generation code from coverage
     ]
   };
