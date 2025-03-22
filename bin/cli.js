@@ -99,6 +99,7 @@ const generateSingleResume = (index) => {
     }
     
     // Use the person's name as the filename if not specified
+    console.log('resume:', resume); // Debugging line
     const personName = resume.json.name;
     const baseName = options.output || personName.toLowerCase().replace(/\s+/g, '-');
     const fileName = options.count > 1 ? `${baseName}-${index+1}` : baseName;
