@@ -2,7 +2,6 @@
 [![CI](https://github.com/mrlynn/faux-cv/actions/workflows/test.yml/badge.svg)](https://github.com/mrlynn/faux-cv/actions/workflows/test.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/npm/dm/faux-cv.svg)](https://www.npmjs.com/package/faux-cv)
-[![Coverage](https://img.shields.io/codecov/c/github/mrlynn/faux-cv/main)](https://codecov.io/gh/mrlynn/faux-cv)
 
 # Faux-CV
 
