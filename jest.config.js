@@ -36,14 +36,11 @@ module.exports = {
     
     // The glob patterns Jest uses to detect coverage files
     coverageReporters: [
-      'json',
       'text',
       'lcov',
+      'json',
       'clover'
     ],
-    
-    // A list of reporter names that Jest uses when writing coverage reports
-    coverageReporters: ['text', 'lcov'],
     
     // An object that configures minimum threshold enforcement for coverage results
     coverageThreshold: {
@@ -72,7 +69,8 @@ module.exports = {
         "uniqueOutputName": "false",
         "suiteNameTemplate": "{filepath}",
         "classNameTemplate": "{classname}",
-        "titleTemplate": "{title}"
+        "titleTemplate": "{title}",
+        "includeConsoleOutput": true
       }]
     ]
   };
