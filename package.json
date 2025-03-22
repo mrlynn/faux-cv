@@ -7,16 +7,16 @@
     "faux-cv": "bin/cli.js"
   },
   "scripts": {
-    "test": "NODE_ENV=test jest --verbose --setupFilesAfterEnv=./jest.setup.js",
-    "test:watch": "NODE_ENV=test jest --watch --setupFilesAfterEnv=./jest.setup.js",
-    "test:coverage": "NODE_ENV=test jest --coverage --setupFilesAfterEnv=./jest.setup.js",
-    "test:ci": "NODE_ENV=test jest --ci --coverage --setupFilesAfterEnv=./jest.setup.js",
-    "test:utils": "NODE_ENV=test jest __tests__/utils.test.js --setupFilesAfterEnv=./jest.setup.js",
-    "test:generators": "NODE_ENV=test jest __tests__/generators.test.js --setupFilesAfterEnv=./jest.setup.js",
-    "test:core": "NODE_ENV=test jest __tests__/core.test.js --setupFilesAfterEnv=./jest.setup.js",
-    "test:pdf": "NODE_ENV=test jest __tests__/pdf.test.js --setupFilesAfterEnv=./jest.setup.js",
-    "test:integration": "NODE_ENV=test jest __tests__/integration.test.js --setupFilesAfterEnv=./jest.setup.js",
-    "test:cli": "NODE_ENV=test jest __tests__/cli.test.js --setupFilesAfterEnv=./jest.setup.js"
+    "test": "NODE_ENV=test jest --verbose",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:coverage": "NODE_ENV=test jest --coverage",
+    "test:ci": "NODE_ENV=test jest --ci --coverage --testResultsProcessor=jest-junit",
+    "test:utils": "NODE_ENV=test jest __tests__/utils.test.js",
+    "test:generators": "NODE_ENV=test jest __tests__/generators.test.js",
+    "test:core": "NODE_ENV=test jest __tests__/core.test.js",
+    "test:pdf": "NODE_ENV=test jest __tests__/pdf.test.js",
+    "test:integration": "NODE_ENV=test jest __tests__/integration.test.js",
+    "test:cli": "NODE_ENV=test jest __tests__/cli.test.js"
   },
   "keywords": [
     "resume",
@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "jest-junit": "^16.0.0",
     "mock-fs": "^5.2.0"
   },
   "engines": {

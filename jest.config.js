@@ -48,7 +48,7 @@ module.exports = {
     // An object that configures minimum threshold enforcement for coverage results
     coverageThreshold: {
       global: {
-        branches: 70,
+        branches: 80,
         functions: 80,
         lines: 80,
         statements: 80
@@ -56,8 +56,23 @@ module.exports = {
     },
     
     // Setup files after environment is set up
-    setupFilesAfterEnv: [],
+    setupFilesAfterEnv: ['./jest.setup.js'],
     
     // The maximum amount of workers used to run your tests (defaults to # of CPUs - 1)
-    maxWorkers: '50%'
+    maxWorkers: '50%',
+    
+    testResultsProcessor: "jest-junit",
+    
+    reporters: [
+      "default",
+      ["jest-junit", {
+        "outputDirectory": "./test-results/jest",
+        "outputName": "results.xml",
+        "ancestorSeparator": " › ",
+        "uniqueOutputName": "false",
+        "suiteNameTemplate": "{filepath}",
+        "classNameTemplate": "{classname}",
+        "titleTemplate": "{title}"
+      }]
+    ]
   };

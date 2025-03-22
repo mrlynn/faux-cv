@@ -1,4 +1,7 @@
 // Add detailed logging for test execution
+const originalConsoleLog = console.log;
+const originalConsoleError = console.error;
+
 global.beforeAll(() => {
   console.log('\n=== Starting Test Suite ===\n');
   // Log available industries at the start of the test suite
@@ -20,6 +23,10 @@ global.afterAll(() => {
 });
 
 global.beforeEach(() => {
+  // Restore original console methods before each test
+  console.log = originalConsoleLog;
+  console.error = originalConsoleError;
+  
   console.log('\n--- Starting Test ---');
   const testState = expect.getState();
   const testName = testState.currentTestName;
@@ -39,30 +46,34 @@ global.afterEach(() => {
   const testState = expect.getState();
   const testName = testState.currentTestName;
   const testStatus = testState.numPassingTests > 0 ? 'PASSED' : 'FAILED';
-  console.log('Test Status:', testStatus);
   
+  // Use console.error for failed tests to ensure visibility
   if (testStatus === 'FAILED') {
+    console.error('\n❌ Test Failed:', testName);
+    
     // Safely access test results with optional chaining
     const failedTest = testState.testResults?.[0]?.testResults?.find(r => r.status === 'failed');
     const failureMessages = failedTest?.failureMessages || ['No failure messages available'];
     
-    console.log('\nFailed Test Details:');
-    console.log('Name:', testName);
-    console.log('Error Messages:', failureMessages);
+    console.error('\nFailed Test Details:');
+    console.error('Name:', testName);
+    console.error('Error Messages:', failureMessages);
     
     // Log additional context if available
     if (failedTest) {
-      console.log('Test Location:', failedTest.location?.line || 'Unknown');
-      console.log('Test Duration:', failedTest.duration || 'Unknown');
+      console.error('Test Location:', failedTest.location?.line || 'Unknown');
+      console.error('Test Duration:', failedTest.duration || 'Unknown');
     }
     
     // Log the current test state
-    console.log('\nTest State:', {
+    console.error('\nTest State:', {
       numPassingTests: testState.numPassingTests,
       numFailingTests: testState.numFailingTests,
       isExpectingAssertions: testState.isExpectingAssertions,
       currentTestName: testState.currentTestName
     });
+  } else {
+    console.log('Test Status:', testStatus);
   }
   
   console.log('--- Test Completed ---\n');
